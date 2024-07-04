@@ -281,3 +281,5 @@ Z:\SKNHPM\bin\Debug\net8.0\System.Net.Http.Formatting.dll
 Z:\SKNHPM\bin\Debug\net8.0\System.Web.Http.dll
 Z:\SKNHPM\bin\Debug\net8.0\System.Web.Http.WebHost.dll
 Z:\SKNHPM\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+Z:\SKNHPM\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+Z:\SKNHPM\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll

@@ -1,21 +1,42 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using SKNHPM.Controllers;
 using SKNHPM.Data;
+using SKNHPM.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var SampleDbConnetion = builder.Configuration.GetConnectionString("sampleDb");
 
 
 builder.Services.AddControllers();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<AppDbContext>(
+    options => options.UseSqlServer(SampleDbConnetion));
+
+builder.Services.AddIdentity<AppUser, IdentityRole>(
+    options =>
+    {
+        options.Password.RequiredUniqueChars = 0;
+        options.Password.RequireUppercase = false;
+        options.Password.RequiredLength = 8;
+        options.Password.RequireNonAlphanumeric = false;
+        options.Password.RequireLowercase = false;
+    })
+    .AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<NurseRequestController>();
 
 
-var SampleDbConnetion = builder.Configuration.GetConnectionString("sampleDb");
-builder.Services.AddDbContext<AppicationDbContext>(options =>options.UseSqlServer(SampleDbConnetion));
+// builder.Services.AddDbContext<AppDbContext>(options =>options.UseSqlServer(SampleDbConnetion));
+
+
+// builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+//     .AddRoles<IdentityRole>()
+//     .AddEntityFrameworkStores<AppDbContext>();
 
 var app = builder.Build();
 

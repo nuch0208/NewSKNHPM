@@ -1,9 +1,11 @@
 using System.Diagnostics;
+using System.Web.Http;
 using Microsoft.AspNetCore.Mvc;
 using SKNHPM.Models;
 
 namespace SKNHPM.Controllers;
 
+[Authorize]
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
