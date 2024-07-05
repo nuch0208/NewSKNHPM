@@ -12,7 +12,7 @@ var SampleDbConnetion = builder.Configuration.GetConnectionString("sampleDb");
 builder.Services.AddControllers();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<AppDbContext>(
+builder.Services.AddDbContext<AppicationDbContext>(
     options => options.UseSqlServer(SampleDbConnetion));
 
 builder.Services.AddIdentity<AppUser, IdentityRole>(
@@ -24,7 +24,7 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(
         options.Password.RequireNonAlphanumeric = false;
         options.Password.RequireLowercase = false;
     })
-    .AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
+    .AddEntityFrameworkStores<AppicationDbContext>().AddDefaultTokenProviders();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

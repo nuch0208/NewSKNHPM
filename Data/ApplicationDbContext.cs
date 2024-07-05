@@ -3,14 +3,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace SKNHPM.Data;
-public class AppDbContext : IdentityDbContext<AppUser>
+public class AppicationDbContext : IdentityDbContext<AppUser>
 {
     // public AppicationDbContext(DbContextOptions<AppicationDbContext> options)
     //     : base(options)
     //     {
 
     //     }
-   public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+   public AppicationDbContext(DbContextOptions<AppicationDbContext> options) : base(options)
     {
 
     }

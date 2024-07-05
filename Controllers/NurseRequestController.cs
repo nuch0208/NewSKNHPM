@@ -16,8 +16,8 @@ namespace SKNHPM.Controllers
      [ApiController]
     public class NurseRequestController : Controller
     {
-        private readonly AppDbContext _context;
-        public NurseRequestController(AppDbContext context)
+        private readonly AppicationDbContext _context;
+        public NurseRequestController(AppicationDbContext context)
         {
             _context = context;
         }
