@@ -1,52 +1,59 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using SKNHPM.Models;
-using Microsoft.EntityFrameworkCore;
 using SKNHPM.Data;
+using SKNHPM.Models;
+
 
 namespace SKNHPM.Controllers
 {
-    [Route("api/[controller]")]
-     [ApiController]
+
     public class NurseRequestController : Controller
     {
-        private readonly AppicationDbContext _context;
+        private readonly AppicationDbContext context;
         public NurseRequestController(AppicationDbContext context)
         {
-            _context = context;
+            this.context = context;
         }
-        // Uri baseAddress = new Uri("https://localhost:44329/api");
-
-        // private readonly HttpClient _client;
-        // public NurseRequestController()
-        // {
-        //     _client = new HttpClient();
-        //     _client.BaseAddress = baseAddress;
-        // }
-        // [HttpGet]
-        // public IActionResult Index()
-        // {
-        //     List<NurseRequest> NurseRequests =  new List<NurseRequest>();
-        //     HttpResponseMessage respone = _client.GetAsync(_client.BaseAddress + "/NurseRequest/Get").Result;
-        //     if (respone.IsSuccessStatusCode)
-        //     {
-        //         string data = respone.Content.ReadAsStringAsync().Result;
-        //         NurseRequests = JsonConvert.DeserializeObject<List<NurseRequest>>(data); 
-        //     }
-        //     return View(NurseRequests);
-        // }
-        [HttpGet]
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var Jobs = await _context.NurseRequests.ToListAsync();
-            
-            return Ok(Jobs);
+            var nurserequest = context.NurseRequests.OrderByDescending(p => p.JobId).ToList();
+            return View(nurserequest);
+        }
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Create(NurseRequestDto nurseerquestDto)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return View(nurseerquestDto);
+            }
+
+            // save the new product in the database
+            NurseRequest nurseerquest = new NurseRequest()
+            {
+                QN = nurseerquestDto.QN,
+                QNName = nurseerquestDto.QNName,
+                StartPoint = nurseerquestDto.StartPoint,
+                EndPoint = nurseerquestDto.EndPoint,
+                MaterialType = nurseerquestDto.MaterialType,
+                UrentType = nurseerquestDto.UrentType,
+                Remark = nurseerquestDto.Remark,
+                // CreatedAt = DateTime.Now,
+
+            };
+
+            context.NurseRequests.Add(nurseerquest);
+            context.SaveChangesAsync();
+
+            return RedirectToAction("Index", "NurseRequest");
         }
     }
+
 }

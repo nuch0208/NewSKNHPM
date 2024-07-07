@@ -12,8 +12,8 @@ using SKNHPM.Data;
 namespace SKNHPM.Migrations
 {
     [DbContext(typeof(AppicationDbContext))]
-    [Migration("20240705024046_CreateInitial")]
-    partial class CreateInitial
+    [Migration("20240705042557_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
