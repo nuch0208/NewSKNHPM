@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "Z:\\SKNHPM\\SKNHPM.csproj": {}
+    "C:\\SKNHPM\\SKNHPM.csproj": {}
   },
   "projects": {
-    "Z:\\SKNHPM\\SKNHPM.csproj": {
+    "C:\\SKNHPM\\SKNHPM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "Z:\\SKNHPM\\SKNHPM.csproj",
+        "projectUniqueName": "C:\\SKNHPM\\SKNHPM.csproj",
         "projectName": "SKNHPM",
-        "projectPath": "Z:\\SKNHPM\\SKNHPM.csproj",
-        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-        "outputPath": "Z:\\SKNHPM\\obj\\",
+        "projectPath": "C:\\SKNHPM\\SKNHPM.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\SKNHPM\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -72,9 +76,17 @@
               "target": "Package",
               "version": "[8.0.0, )"
             },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
+            },
+            "SqlTableDependency": {
+              "target": "Package",
+              "version": "[8.5.8, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -108,7 +120,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

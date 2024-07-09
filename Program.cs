@@ -28,7 +28,7 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<NurseRequestController>();
+// builder.Services.AddScoped<NurseRequestController>();
 
 
 // builder.Services.AddDbContext<AppDbContext>(options =>options.UseSqlServer(SampleDbConnetion));

@@ -1,17 +1,7 @@
-@model List<NurseRequest>
+﻿@model List<NurseRequest>
 @{
 }
 
-<h2 class="text-center mb-5">List of Products</h2>
-
-@* <div class="row mb-5">
-    <div class="col">
-        <a class="btn btn-primary" asp-controllers="Products" asp-action="Create">New Product</a>
-    </div>
-    <div class="col">
-
-    </div>
-</div> *@
 
 <table class="table">
     <thead>
@@ -31,22 +21,22 @@
     </thead>
 
     <tbody>
-        @foreach (var nurseeequest in Model)
+        @foreach (var nurserequest in Model)
         {
             <tr>
-                <td>@nurseeequest.JobId</td>
-                <td>@nurseeequest.QNName</td>
-                <td>@nurseeequest.StartPoint</td>
-                <td>@nurseeequest.EndPoint</td>
-                <td>@nurseeequest.PoterFname</td>
-                <td>@nurseeequest.MaterialType</td>
-                <td>@nurseeequest.UrentType</td>
+                <td>@nurserequest.QN</td>
+                <td>@nurserequest.QNName</td>
+                <td>@nurserequest.StartPoint</td>
+                <td>@nurserequest.EndPoint</td>
+                <td>@nurserequest.PoterFname</td>
+                <td>@nurserequest.MaterialType</td>
+                <td>@nurserequest.UrentType</td>
                 <td> </td>
-                <td>@nurseeequest.Remark</td>
+                <td>@nurserequest.Remark</td>
                 <td> </td>
                 <td style="white-space:nowrap">
-                    <a class="btn btn-danger btn-sm" asp-controllers="NurseRequest" asp-action="Delete" asp-route-id="@nurseeequest.JobId" onclick="return confirm('Are you sure?')">Delete</a>
-                    <a class="btn btn-primary btn-sm" asp-controllers="NurseRequest" asp-action="Edit" asp-route-id="@nurseeequest.JobId">Edit</a>
+                    <a class="btn btn-danger btn-sm" asp-controllers="NurseRequest" asp-action="Delete" asp-route-id="@nurserequest.JobId" onclick="return confirm('Are you sure?')">Delete</a>
+                    <a class="btn btn-primary btn-sm" asp-controllers="NurseRequest" asp-action="Edit" asp-route-id="@nurserequest.JobId">Edit</a>
                 </td>
             </tr>
         }
