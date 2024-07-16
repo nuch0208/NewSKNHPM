@@ -37,6 +37,7 @@
                 <td> </td>
                 <td style="white-space:nowrap">
                     <a class="btn btn-primary btn-sm" asp-controllers="NurseRequest" asp-action="Edit" asp-route-id="@nurserequest.JobId">Edit</a>
+                    <a class="btn btn-warning btn-sm" asp-controllers="NurseRequest" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" onclick="return confirm('Are you sure?')">OK</a>
                     <a class="btn btn-danger btn-sm" asp-controllers="NurseRequest" asp-action="Delete" asp-route-id="@nurserequest.JobId" onclick="return confirm('Are you sure?')">Delete</a>
                 </td>
             </tr>

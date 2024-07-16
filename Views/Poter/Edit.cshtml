@@ -1,0 +1,188 @@
+﻿@model NurseRequestDto
+@{
+}
+
+
+<div class="row">
+    <div class="col-md-8 mx-auto rounded border p-2">
+        <h2 class="text-center mb-5">New Product</h2>
+
+
+        <form method="post" enctype="multipart/form-data">
+            @* <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">JobId</label>
+                <div class=col-sm-8>
+                    <input class="form-control" value="@ViewData["NurseRequestId"]">
+                </div>
+            </div> *@
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">QN</label>
+                <div class=col-sm-8>
+                    <input class="form-control" asp-for="QN">
+                    <span asp-validation-for="QN" class="text-danger"></span>
+                </div>
+            </div>
+            @* <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">ชื่อ-นามสกุล</label>
+                <div class=col-sm-8>
+                    <input class="form-control" asp-for="QNName">
+                    <span asp-validation-for="QNName" class="text-danger"></span>
+                </div>
+            </div> *@
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">เวรเปล</label>
+                <div class=col-sm-8>
+                    <select class="form-select" asp-for="PoterFname">
+                        <option value="419  นายรณรงค์ มาลามาศ">กรุณาเลือกเวรเปล</option>
+                        <option value="419  นายรณรงค์ มาลามาศ">419  นายรณรงค์ มาลามาศ</option>
+                        <option value="402  นายไพโรจน์ ชาวไร่อ้อย">402  นายไพโรจน์ ชาวไร่อ้อย</option>
+                        <option value="403  นายปรีชา ยี่อินทร">403  นายปรีชา ยี่อินทร</option>
+                        <option value="404  นายกิตติ ภูมิบูรณ์">404  นายกิตติ ภูมิบูรณ์</option>
+                        <option value="405  นายอนุสรน์ โค้วสกุล">405  นายอนุสรน์ โค้วสกุล</option>
+                        <option value="406  นายปิติพงษ์ ชาวไร่อ้อย">406  นายปิติพงษ์ ชาวไร่อ้อย</option>
+                        <option value="407  นายอัครพล แสงเพ็ญจันทร์">407  นายอัครพล แสงเพ็ญจันทร์</option>
+                        <option value="408  นายอนุสาตร์ โค้วสกุล">408  นายอนุสาตร์ โค้วสกุล</option>
+                        <option value="409  นายเอกวัฒน์ นามนสาร">409  นายเอกวัฒน์ นามนสาร</option>
+                        <option value="410  นายประหยัด ผาประเสริฐ">410  นายประหยัด ผาประเสริฐ</option>
+                        <option value="411  นายสุชาต ใจบุญ">411  นายสุชาต ใจบุญ</option>
+                        <option value="412  นางสงวน พนาราบ">412  นางสงวน พนาราบ</option>
+                        <option value="413  นายธเนตร กำมะหยี่">413  นายธเนตร กำมะหยี่</option>
+                        <option value="414  นายอัฐพล ค้าขาย">414  นายอัฐพล ค้าขาย</option>
+                        <option value="415  นายไพรัช มณีช่วงแก้ว">415  นายไพรัช มณีช่วงแก้ว</option>
+                        <option value="416  นาสารัส หงห์คู">416  นาสารัส หงห์คู</option>
+                        <option value="417  นายวิษณุ ขันทอง">417  นายวิษณุ ขันทอง</option>
+                        <option value="418  นายสมโภชน์ หอมแด">418  นายสมโภชน์ หอมแดง</option>
+                        <option value="420  นายหนูกรานต์ สังกฤษณ์">420  นายหนูกรานต์ สังกฤษณ์</option>
+                        <option value="422  นายอุทัย ราชตราชู">422  นายอุทัย ราชตราชู</option>
+                        <option value="423  นายอาคม เพ็งจันทร์">423  นายอาคม เพ็งจันทร์</option>
+                        <option value="424  นายพรเทพ	โรจน์ประภาพร">424  นายพรเทพ	โรจน์ประภาพร</option>
+                        <option value="425  นางสาวดรุณีพร เอี่ยมทศ">425  นางสาวดรุณีพร เอี่ยมทศ</option>
+                        <option value="426  นายชาติชาย เธียรเอกพันธ์">426  นายชาติชาย เธียรเอกพันธ์</option>
+                        <option value="427  นายสุรวัตร น้อยเตี้ย">427  นายสุรวัตร น้อยเตี้ย</option>
+                        <option value="428  นายอภิสิทธิ์ สิทธิจรูญ">428  นายอภิสิทธิ์ สิทธิจรูญ</option>
+                        <option value="429  นายเศกสรรค์ วิเศษชู">429  นายเศกสรรค์ วิเศษชู</option>
+                        <option value="430  นายนิธิศ แขมมี">430  นายนิธิศ แขมมี</option>
+                        <option value="431  นายศุภนัฐ เชิญอักษร">431  นายศุภนัฐ เชิญอักษร</option>
+                        <option value="432  นายนัฎทวุทธิ์ ชัยวงษ์">432  นายนัฎทวุทธิ์ ชัยวงษ์</option>
+                        <option value="433  นายศิริโชค อ่วมสิน">433  นายศิริโชค อ่วมสิน</option>
+                        <option value="434  นายขจรศักดิ์ เขตร์กรณ์">434  นายขจรศักดิ์ เขตร์กรณ์</option>
+                        <option value="435  นายพิษณุ อัฒจักร">435  นายพิษณุ อัฒจักร</option>
+                        <option value="436  นายภาคภูมิ	พันธเสน">436  นายภาคภูมิ	พันธเสน</option>
+                        <option value="438  นายอรรถโกวิทย์ ทองพฤกษ์">438  นายอรรถโกวิทย์ ทองพฤกษ์</option>
+                        <option value="439  นายไพบูรณ์ วิจารย์ชน">439  นายไพบูรณ์ วิจารย์ชน</option>
+                        <option value="440  นายสาธิต นามีผล">440  นายสาธิต นามีผล</option>
+                        <option value="444  นายธนิน สิงสาทิตย์">444  นายธนิน สิงสาทิตย์</option>
+                        <option value="437  นายอัมพร วงษ์นอก">437  นายอัมพร วงษ์นอก</option>
+                        <option value="421  นายวินิต แย้มพันธ์">421  นายวินิต แย้มพันธ์</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">สถานะ</label>
+                <div class=col-sm-8>
+                    <select class="form-select" asp-for="JobStatusName">
+                        <option value="ร้องขอ">ร้องขอ</option>
+                        <option value="มอบหมาย">มอบหมาย</option>
+                        <option value="อยู่ระหว่างเดินทาง">อยู่ระหว่างเดินทาง</option>
+                        <option value="สิ้นสุดการบริการ">สิ้นสุดการบริการ</option>
+                    </select>
+                </div>
+            </div>    
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">ประเภทคนไข้</label>
+                <div class=col-sm-8>
+                    <select class="form-select" asp-for="PatientType">
+                        <option value="OPD">OPD</option>
+                        <option value="IPD">IPD</option>
+                    </select>
+                </div>
+            </div>
+
+
+            @* <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">ประเภทคนไข้</label>
+                <div class=col-sm-8>
+                    <select class="form-select" asp-for="PatientType">
+                        <option value="OPD">OPD</option>
+                        <option value="IPD">IPD</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">ประเภทความเร่งด่วน</label>
+                <div class=col-sm-8>
+                    <select class="form-select" asp-for="UrentType">
+                        <option value="ปกติ">ปกติ</option>
+                        <option value="ด่วน">ด่วน</option>
+                        <option value="ด่วนมาก">ด่วนมาก</option>
+                    </select>
+                </div>
+            </div> *@
+
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">ประเภทรถเข็น</label>
+                <div class=col-sm-8>
+                    <select class="form-select" asp-for="MaterialType">
+                        <option value='รถนั่ง'>รถนั่ง</option>
+                        <option value='รถนอน'>รถนอน</option>
+                        <option value='เฉพาะคน(มีรถแล้ว)'>เฉพาะคน(มีรถแล้ว)</option>
+                        <option value='รถนั่งปรับนอน'>รถนั่งปรับนอน</option>
+                        <option value='รถนั่งปรับนอน + ออกซิเจน'>รถนั่งปรับนอน + ออกซิเจน</option>
+                        <option value='รถนั่ง + เสาน้ำเกลือ'>รถนั่ง + เสาน้ำเกลือ</option>
+                        <option value='รถนั่ง + ออกซิเจน'>รถนั่ง + ออกซิเจน</option>
+                        <option value='รถนอน + ออกซิเจน'>รถนอน + ออกซิเจน</option>
+                        <option value='รถนอนผู้ป่วยติดเชื้อ'>รถนอนผู้ป่วยติดเชื้อ</option>
+                        <option value='รถนั่งผู้ป่วยติดเชื้อ'>รถนั่งผู้ป่วยติดเชื้อ</option>
+                        <option value='รถนอนผู้ป่วยติดเชื้อ + ออกซิเจน'>รถนอนผู้ป่วยติดเชื้อ + ออกซิเจน</option>
+                        <option value='รถนั่งผู้ป่วยติดเชื้อ + ออกซิเจน'>รถนั่งผู้ป่วยติดเชื้อ + ออกซิเจน</option>
+                        <option value='รถนอนพร้อมเปลตัก'>รถนอนพร้อมเปลตัก</option>
+                        <option value='รถนอนพร้อมบอร์ด'>รถนอนพร้อมบอร์ด</option>
+                        <option value='รถ Ambulance'>รถ Ambulance</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3" >
+                <label class="col-sm-4 col-form-label">หมายเหตุ</label>
+                <div class=col-sm-8>
+                    <input class="form-control" asp-for="Remark" >
+                    <span asp-validation-for="Remark" class="text-danger"></span>
+                </div>
+            </div>
+            @* <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">จุดส่งที่ 1</label>
+                <div class=col-sm-8>
+                    <select class="form-select" asp-for="StartPoint">
+                        <option value="1 ห้องฉุกเฉิน">1 ห้องฉุกเฉิน</option>
+                        <option value="2 ห้องเจาะเลือด">2 ห้องเจาะเลือด</option>
+                        <option value="3 แผนกเอ็กซเรย์">3 แผนกเอ็กซเรย์</option>
+                        <option value="4 ห้องตรวจคลื่นหัวใจ">4 ห้องตรวจคลื่นหัวใจ</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <label class="col-sm-4 col-form-label">จุดส่งที่ 2</label>
+                <div class=col-sm-8>
+                    <select class="form-select" asp-for="EndPoint">
+                        <option value="1 ห้องฉุกเฉิน">1 ห้องฉุกเฉิน</option>
+                        <option value="2 ห้องเจาะเลือด">2 ห้องเจาะเลือด</option>
+                        <option value="3 แผนกเอ็กซเรย์">3 แผนกเอ็กซเรย์</option>
+                        <option value="4 ห้องตรวจคลื่นหัวใจ">4 ห้องตรวจคลื่นหัวใจ</option>
+                    </select>
+                </div>
+            </div> *@
+
+            <div class="row">
+                <div class="offset-sm-4 col-sm-4 d-grid">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <div class="col-sm-4 d-grid">
+                    <a class="btn btn-outline-primary" asp-asp-controller="Poter" asp-action="Index" role="button">Cancel</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

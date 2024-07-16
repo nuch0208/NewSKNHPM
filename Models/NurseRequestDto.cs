@@ -7,6 +7,7 @@ namespace SKNHPM.Models
 {
     public class NurseRequestDto
     {
+        public int  JobId   { get; set; }
         public DateTime ReqDate { get; set; }   
         public DateTime ReqTime { get; set; }
         public DateTime EndDate { get; set; }   
@@ -19,7 +20,8 @@ namespace SKNHPM.Models
         public string UrentType { get; set; }   
         public string PatientType { get; set; } 
         public string PoterFname { get; set; }  
-        public string Remark { get; set; }  
+        public string Remark { get; set; }
+        public string JobStatusName { get; set; }
         public int QN { get; set; } 
         public string QNName { get; set; }  
         public string QNAge { get; set; }   

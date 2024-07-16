@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SKNHPM\\SKNHPM.csproj": {}
+    "D:\\SKNHPM - Copy\\SKNHPM.csproj": {}
   },
   "projects": {
-    "D:\\SKNHPM\\SKNHPM.csproj": {
+    "D:\\SKNHPM - Copy\\SKNHPM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SKNHPM\\SKNHPM.csproj",
+        "projectUniqueName": "D:\\SKNHPM - Copy\\SKNHPM.csproj",
         "projectName": "SKNHPM",
-        "projectPath": "D:\\SKNHPM\\SKNHPM.csproj",
+        "projectPath": "D:\\SKNHPM - Copy\\SKNHPM.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\SKNHPM\\obj\\",
+        "outputPath": "D:\\SKNHPM - Copy\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config"
