@@ -2,7 +2,7 @@
 @{
 }
 
-
+}
 <table class="table">
     <thead>
         <tr>
@@ -19,8 +19,9 @@
     </thead>
 
     <tbody>
+       
         @foreach (var nurserequest in Model)
-        {
+        {  
             @if(nurserequest.UrgentType == "ปกติ")
             {
             <tr class="label-warning" style="color:green;">
@@ -37,9 +38,11 @@
                 <td style="white-space:nowrap">
                     <a class="btn btn-warning btn-sm" asp-controllers="Poter" asp-action="Edit" asp-route-id="@nurserequest.JobId">Assign</a>
                     <a class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="Delete" asp-route-id="@nurserequest.JobId" onclick="return confirm('Are you sure?')">Close</a>
+                    <input type="submit" class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" value="Finish Confirmation"  />
                 </td>
             </tr>
             }
+
             @if(nurserequest.UrgentType == "ด่วน")
             {
             <tr class="label-warning" style="color:yellow;">
@@ -56,11 +59,15 @@
                 <td style="white-space:nowrap">
                     <a class="btn btn-warning btn-sm" asp-controllers="Poter" asp-action="Edit" asp-route-id="@nurserequest.JobId">Assign</a>
                     <a class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="Delete" asp-route-id="@nurserequest.JobId" onclick="return confirm('Are you sure?')">Close</a>
+                    <input type="submit" class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" value="Finish Confirmation"  />
                 </td>
             </tr>
             }
+            @if(nurserequest.JobStatusName != "สิ้นสุดการทำงาน")
+            {  
             @if(nurserequest.UrgentType == "ด่วนมาก")
             {
+            <form method="post" enctype="multipart/form-data">
             <tr class="label-warning" style="color:red;">
                 <td>@nurserequest.QN</td>
                 <td>@nurserequest.QNName</td>
@@ -74,13 +81,13 @@
                 <td> </td>
                 <td style="white-space:nowrap">
                     <a class="btn btn-warning btn-sm" asp-controllers="Poter" asp-action="Edit" asp-route-id="@nurserequest.JobId">Assign</a>
-                    <a class="btn btn-warning btn-sm" asp-controllers="Poter" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" onclick="return confirm('Are you sure?')">OK</a>
                     <a class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="Delete" asp-route-id="@nurserequest.JobId" onclick="return confirm('Are you sure?')">Close</a>
-                </td>
+                    <input type="submit" class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" value="Finish Confirmation"  />
+                </td>   
             </tr>
+            </form>
             }
-
-            
+        }
         }
     </tbody>
 </table>

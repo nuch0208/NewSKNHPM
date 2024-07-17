@@ -7,6 +7,17 @@ namespace SKNHPM.Models
 {
     public class NurseRequestDto
     {
+        private string v;
+
+        public NurseRequestDto()
+        {
+        }
+
+        public NurseRequestDto(string v)
+        {
+            this.v = v;
+        }
+
         public int  JobId   { get; set; }
         public DateTime ReqDate { get; set; }   
         public DateTime ReqTime { get; set; }

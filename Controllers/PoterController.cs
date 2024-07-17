@@ -17,6 +17,7 @@ namespace SKNHPM.Controllers
             var nurserequest = context.NurseRequests.OrderByDescending(p => p.JobId).ToList();
             return View(nurserequest);
         }
+        
         public IActionResult Create()
          {
              return View();
@@ -108,7 +109,6 @@ namespace SKNHPM.Controllers
 
             return RedirectToAction("Index", "Poter");
          }
-
          
          public IActionResult Delete(int id)
         {
@@ -141,6 +141,7 @@ namespace SKNHPM.Controllers
                 UrentType = nurseRequest.UrgentType,
                 PatientType = nurseRequest.PatientType,
                 Remark = nurseRequest.Remark,
+                JobStatusName = nurseRequest.JobStatusName,
                 Department = "null",
                 PoterFname = "null",
                 QNAge = "null",
@@ -162,22 +163,13 @@ namespace SKNHPM.Controllers
             }
             if (ModelState.IsValid)
             {
-                nurseRequestDto.JobStatusName = "สิ้นสุดบริการ";
+                ViewData["NurseRequestId"] = nurseRequest.JobId;
                 return View(nurseRequestDto);
             }
 
-            // nurseRequest.QN = nurseRequestDto.QN;
-            // nurseRequest.QNName = nurseRequestDto.QNName;
-            // nurseRequest.StartPoint = nurseRequestDto.StartPoint;
-            // nurseRequest.EndPoint1 = nurseRequestDto.EndPoint;
-            // nurseRequest.MaterialType = nurseRequestDto.MaterialType;
-            // nurseRequest.UrgentType = nurseRequestDto.UrentType;
-            // nurseRequest.PatientType = nurseRequestDto.PatientType;
-            // nurseRequest.Remark = nurseRequestDto.Remark;
-            // nurseRequest.PoterFname=nurseRequestDto.PoterFname;
-            nurseRequest.JobStatusName=nurseRequestDto.JobStatusName;
-
+            nurseRequest.JobStatusName="สิ้นสุดการทำงาน";
             context.SaveChanges();
+            
             return RedirectToAction("Index", "Poter");
          }
     }
