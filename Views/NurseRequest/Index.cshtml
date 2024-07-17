@@ -23,7 +23,10 @@
     <tbody>
         @foreach (var nurserequest in Model)
         {
-            <tr>
+            
+             @if(nurserequest.UrgentType == "ปกติ")
+            {
+                <tr class="label-warning" style="color:green;">
                 <td>@nurserequest.QN</td>
                 <td>@nurserequest.QNName</td>
                 <td>@nurserequest.StartPoint</td>
@@ -40,6 +43,47 @@
                     <a class="btn btn-danger btn-sm" asp-controllers="NurseRequest" asp-action="Delete" asp-route-id="@nurserequest.JobId" onclick="return confirm('Are you sure?')">Delete</a>
                 </td>
             </tr>
+            }       
+             @if(nurserequest.UrgentType == "ด่วน")
+            {
+                <tr class="label-warning" style="color:yellow;">
+                <td>@nurserequest.QN</td>
+                <td>@nurserequest.QNName</td>
+                <td>@nurserequest.StartPoint</td>
+                <td>@nurserequest.EndPoint1</td>
+                <td>@nurserequest.PoterFname</td>
+                <td>@nurserequest.MaterialType</td>
+                <td>@nurserequest.UrgentType</td>
+                <td>@nurserequest.JobStatusName</td>
+                <td> </td>
+                <td>@nurserequest.Remark</td>
+                <td> </td>
+                <td style="white-space:nowrap">
+                    <a class="btn btn-primary btn-sm" asp-controllers="NurseRequest" asp-action="Edit" asp-route-id="@nurserequest.JobId">Edit</a>
+                    <a class="btn btn-danger btn-sm" asp-controllers="NurseRequest" asp-action="Delete" asp-route-id="@nurserequest.JobId" onclick="return confirm('Are you sure?')">Delete</a>
+                </td>
+            </tr>
+            }       
+             @if(nurserequest.UrgentType == "ด่วนมาก")
+            {
+                <tr class="label-warning" style="color:red;">
+                <td>@nurserequest.QN</td>
+                <td>@nurserequest.QNName</td>
+                <td>@nurserequest.StartPoint</td>
+                <td>@nurserequest.EndPoint1</td>
+                <td>@nurserequest.PoterFname</td>
+                <td>@nurserequest.MaterialType</td>
+                <td>@nurserequest.UrgentType</td>
+                <td>@nurserequest.JobStatusName</td>
+                <td> </td>
+                <td>@nurserequest.Remark</td>
+                <td> </td>
+                <td style="white-space:nowrap">
+                    <a class="btn btn-primary btn-sm" asp-controllers="NurseRequest" asp-action="Edit" asp-route-id="@nurserequest.JobId">Edit</a>
+                    <a class="btn btn-danger btn-sm" asp-controllers="NurseRequest" asp-action="Delete" asp-route-id="@nurserequest.JobId" onclick="return confirm('Are you sure?')">Delete</a>
+                </td>
+            </tr>
+            }       
         }
     </tbody>
 </table>

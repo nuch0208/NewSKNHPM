@@ -22,6 +22,7 @@ namespace SKNHPM.Controllers
              return View();
          }
 
+
         [HttpPost]
         public IActionResult Create(NurseRequestDto nurseRequestDto)
         {
@@ -107,6 +108,8 @@ namespace SKNHPM.Controllers
 
             return RedirectToAction("Index", "Poter");
          }
+
+         
          public IActionResult Delete(int id)
         {
             var nurseRequest = context.NurseRequests.Find(id);
@@ -119,6 +122,64 @@ namespace SKNHPM.Controllers
 
             return RedirectToAction("Index", "Poter");
         }
+        
+        public IActionResult EditStatus(int id)
+        {
+            var nurseRequest = context.NurseRequests.Find(id);
+            if(nurseRequest == null)
+            {
+                return RedirectToAction("Index", "Poter");
+            }
+            var nurseRequestDto = new NurseRequestDto()
+            {
+                JobId = nurseRequest.JobId,
+                QN = nurseRequest.QN,
+                QNName = nurseRequest.QNName,
+                StartPoint = nurseRequest.StartPoint,
+                EndPoint = nurseRequest.EndPoint1,
+                MaterialType = nurseRequest.MaterialType,
+                UrentType = nurseRequest.UrgentType,
+                PatientType = nurseRequest.PatientType,
+                Remark = nurseRequest.Remark,
+                Department = "null",
+                PoterFname = "null",
+                QNAge = "null",
+                QNSex = "null",
+            };
+
+             ViewData["NurseRequestId"] = nurseRequest.JobId;
+
+            return View(nurseRequestDto);
+        }
+
+        [HttpPost]
+        public IActionResult EditStatus(int id, NurseRequestDto nurseRequestDto)
+         {
+            var nurseRequest = context.NurseRequests.Find(id);
+            if(nurseRequest == null)
+            {
+                return RedirectToAction("Index", "Poter");
+            }
+            if (ModelState.IsValid)
+            {
+                nurseRequestDto.JobStatusName = "สิ้นสุดบริการ";
+                return View(nurseRequestDto);
+            }
+
+            // nurseRequest.QN = nurseRequestDto.QN;
+            // nurseRequest.QNName = nurseRequestDto.QNName;
+            // nurseRequest.StartPoint = nurseRequestDto.StartPoint;
+            // nurseRequest.EndPoint1 = nurseRequestDto.EndPoint;
+            // nurseRequest.MaterialType = nurseRequestDto.MaterialType;
+            // nurseRequest.UrgentType = nurseRequestDto.UrentType;
+            // nurseRequest.PatientType = nurseRequestDto.PatientType;
+            // nurseRequest.Remark = nurseRequestDto.Remark;
+            // nurseRequest.PoterFname=nurseRequestDto.PoterFname;
+            nurseRequest.JobStatusName=nurseRequestDto.JobStatusName;
+
+            context.SaveChanges();
+            return RedirectToAction("Index", "Poter");
+         }
     }
 
 }
