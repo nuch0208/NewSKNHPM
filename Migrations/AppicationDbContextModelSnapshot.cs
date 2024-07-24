@@ -253,7 +253,7 @@ namespace SKNHPM.Migrations
 
                     b.HasKey("DeptId");
 
-                    b.ToTable("Departments");
+                    b.ToTable("Departments", (string)null);
                 });
 
             modelBuilder.Entity("SKNHPM.Models.JobStatus", b =>
@@ -270,7 +270,7 @@ namespace SKNHPM.Migrations
 
                     b.HasKey("JobStatusId");
 
-                    b.ToTable("JobStatuses");
+                    b.ToTable("JobStatuses", (string)null);
                 });
 
             modelBuilder.Entity("SKNHPM.Models.Material", b =>
@@ -297,7 +297,7 @@ namespace SKNHPM.Migrations
 
                     b.HasKey("MaterialId");
 
-                    b.ToTable("Materials");
+                    b.ToTable("Materials", (string)null);
                 });
 
             modelBuilder.Entity("SKNHPM.Models.MaterialStatus", b =>
@@ -314,7 +314,7 @@ namespace SKNHPM.Migrations
 
                     b.HasKey("MatStatusId");
 
-                    b.ToTable("MaterialStatuses");
+                    b.ToTable("MaterialStatuses", (string)null);
                 });
 
             modelBuilder.Entity("SKNHPM.Models.NurseRequest", b =>
@@ -384,7 +384,7 @@ namespace SKNHPM.Migrations
 
                     b.HasKey("JobId");
 
-                    b.ToTable("NurseRequests");
+                    b.ToTable("NurseRequests", (string)null);
                 });
 
             modelBuilder.Entity("SKNHPM.Models.Patient", b =>
@@ -401,7 +401,7 @@ namespace SKNHPM.Migrations
 
                     b.HasKey("PatienId");
 
-                    b.ToTable("Patients");
+                    b.ToTable("Patients", (string)null);
                 });
 
             modelBuilder.Entity("SKNHPM.Models.Poter", b =>
@@ -426,7 +426,7 @@ namespace SKNHPM.Migrations
 
                     b.HasKey("PoterId");
 
-                    b.ToTable("Poters");
+                    b.ToTable("Poters", (string)null);
                 });
 
             modelBuilder.Entity("SKNHPM.Models.Urgent", b =>
@@ -443,7 +443,7 @@ namespace SKNHPM.Migrations
 
                     b.HasKey("UrgentId");
 
-                    b.ToTable("Urgents");
+                    b.ToTable("Urgents", (string)null);
                 });
 
             modelBuilder.Entity("SKNHPM.Models.UserLogin", b =>
@@ -503,7 +503,7 @@ namespace SKNHPM.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("UserLogins");
+                    b.ToTable("UserLogins", (string)null);
                 });
 
             modelBuilder.Entity("SKNHPM.Models.UserRole", b =>
@@ -520,7 +520,7 @@ namespace SKNHPM.Migrations
 
                     b.HasKey("RoldId");
 
-                    b.ToTable("UserRoles");
+                    b.ToTable("UserRoles", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

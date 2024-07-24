@@ -45,10 +45,10 @@ namespace SKNHPM.Controllers
                 UrgentType = nurseRequestDto.UrentType,
                 PatientType = nurseRequestDto.PatientType,
                 Remark = nurseRequestDto.Remark,
-                DeptName = "",
-                PoterFname = "",
-                QNAge = "",
-                QNSex = "",
+                DeptName = nurseRequestDto.DeptName,
+                PoterFname = nurseRequestDto.PoterFname,
+                QNAge = nurseRequestDto.QNAge,
+                QNSex = nurseRequestDto.QNSex,
             };
             context.NurseRequests.Add(nurseRequest);
             context.SaveChanges();
@@ -72,7 +72,7 @@ namespace SKNHPM.Controllers
                 UrentType = nurseRequest.UrgentType,
                 PatientType = nurseRequest.PatientType,
                 Remark = nurseRequest.Remark,
-                Department = "",
+                DeptName = "",
                 PoterFname = "",
                 QNAge = "",
                 QNSex = "",

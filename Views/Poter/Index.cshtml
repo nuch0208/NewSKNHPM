@@ -22,6 +22,8 @@
        
         @foreach (var nurserequest in Model)
         {  
+            @if(nurserequest.JobStatusName != "สิ้นสุดการทำงาน")
+            {  
             @if(nurserequest.UrgentType == "ปกติ")
             {
             <tr class="label-warning" style="color:green;">
@@ -42,7 +44,9 @@
                 </td>
             </tr>
             }
-
+            }
+            @if(nurserequest.JobStatusName != "สิ้นสุดการทำงาน")
+            {  
             @if(nurserequest.UrgentType == "ด่วน")
             {
             <tr class="label-warning" style="color:yellow;">
@@ -62,6 +66,7 @@
                     <input type="submit" class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" value="Finish Confirmation"  />
                 </td>
             </tr>
+            }
             }
             @if(nurserequest.JobStatusName != "สิ้นสุดการทำงาน")
             {  
