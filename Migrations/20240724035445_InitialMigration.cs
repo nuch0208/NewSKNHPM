@@ -116,23 +116,25 @@ namespace SKNHPM.Migrations
                 {
                     JobId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ReqDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ReqTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false),
-                    Department = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    StartPoint = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EndPoint = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    MaterialType = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UrentType = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PatientType = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PoterFname = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Remark = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    DeptName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    StartPoint = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EndPoint1 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EndPoint2 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EndPoint3 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    EndPoint4 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    JobStatusName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    MaterialType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UrgentType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PatientType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PoterFname = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Remark = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     QN = table.Column<int>(type: "int", nullable: false),
-                    QNName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    QNAge = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    QNSex = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    QNName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    QNAge = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    QNSex = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {

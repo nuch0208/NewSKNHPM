@@ -2,7 +2,7 @@
 @{
 }
 
-}
+<form method="post" enctype="multipart/form-data">
 <table class="table">
     <thead>
         <tr>
@@ -19,14 +19,13 @@
     </thead>
 
     <tbody>
-       
         @foreach (var nurserequest in Model)
         {  
             @if(nurserequest.JobStatusName != "สิ้นสุดการทำงาน")
             {  
             @if(nurserequest.UrgentType == "ปกติ")
             {
-            <tr class="label-warning" style="color:green;">
+            <tr class="label-warning" style="background-color:rgb(131, 247, 131);" style="color:white;">
                 <td>@nurserequest.QN</td>
                 <td>@nurserequest.QNName</td>
                 <td>@nurserequest.StartPoint</td>
@@ -40,16 +39,17 @@
                 <td style="white-space:nowrap">
                     <a class="btn btn-warning btn-sm" asp-controllers="Poter" asp-action="Edit" asp-route-id="@nurserequest.JobId">Assign</a>
                     <a class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="Delete" asp-route-id="@nurserequest.JobId" onclick="return confirm('Are you sure?')">Close</a>
-                    <input type="submit" class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" value="Finish Confirmation"  />
+                    <input type="submit" class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" value="Finish"  />
                 </td>
             </tr>
             }
+
             }
             @if(nurserequest.JobStatusName != "สิ้นสุดการทำงาน")
             {  
             @if(nurserequest.UrgentType == "ด่วน")
             {
-            <tr class="label-warning" style="color:yellow;">
+            <tr class="label-warning" style="background-color:rgb(247, 247, 100);" style="color:white;">
                 <td>@nurserequest.QN</td>
                 <td>@nurserequest.QNName</td>
                 <td>@nurserequest.StartPoint</td>
@@ -63,17 +63,17 @@
                 <td style="white-space:nowrap">
                     <a class="btn btn-warning btn-sm" asp-controllers="Poter" asp-action="Edit" asp-route-id="@nurserequest.JobId">Assign</a>
                     <a class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="Delete" asp-route-id="@nurserequest.JobId" onclick="return confirm('Are you sure?')">Close</a>
-                    <input type="submit" class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" value="Finish Confirmation"  />
+                    <input type="submit" class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" value="Finish"  />
                 </td>
             </tr>
             }
+
             }
             @if(nurserequest.JobStatusName != "สิ้นสุดการทำงาน")
             {  
             @if(nurserequest.UrgentType == "ด่วนมาก")
             {
-            <form method="post" enctype="multipart/form-data">
-            <tr class="label-warning" style="color:red;">
+            <tr class="label-warning" style="background-color:rgb(240, 114, 114);" style="color:white;">
                 <td>@nurserequest.QN</td>
                 <td>@nurserequest.QNName</td>
                 <td>@nurserequest.StartPoint</td>
@@ -87,12 +87,12 @@
                 <td style="white-space:nowrap">
                     <a class="btn btn-warning btn-sm" asp-controllers="Poter" asp-action="Edit" asp-route-id="@nurserequest.JobId">Assign</a>
                     <a class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="Delete" asp-route-id="@nurserequest.JobId" onclick="return confirm('Are you sure?')">Close</a>
-                    <input type="submit" class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" value="Finish Confirmation"  />
+                    <input type="submit" class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" value="Finish"  />
                 </td>   
             </tr>
-            </form>
             }
         }
         }
     </tbody>
 </table>
+</form>

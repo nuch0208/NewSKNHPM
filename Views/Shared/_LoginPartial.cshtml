@@ -4,7 +4,21 @@
 <ul class="navbar-nav">
     @if (signInManager.IsSignedIn(User))
     {
-        <li class="nav-item dropdown">
+        <ul class="navbar-nav flex-grow-1">
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="NurseRequest" asp-action="Create">เรียกบริการเวรเปล</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="NurseRequest" asp-action="Index">รายการคิวเวรเปล</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Poter" asp-action="Index">รายการรอจ่ายงาน</a>
+            </li>
+        </ul>
+        <li class="nav-item dropdown" style="text-align:right;">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 @User.Identity!.Name!
             </a>
@@ -19,11 +33,13 @@
     }
     else
     {
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
-        </li>
+        <ul class="navbar-nav flex-grow-1" style="text-align:right;">
+            <li class="nav-item" >
+                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register" style="text-align:right;">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login" style="text-align:right;">Login</a>
+            </li>
+        </ul>
     }
 </ul>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SKNHPM - Copy\\SKNHPM.csproj": {}
+    "C:\\NewSKNHPM\\SKNHPM.csproj": {}
   },
   "projects": {
-    "D:\\SKNHPM - Copy\\SKNHPM.csproj": {
+    "C:\\NewSKNHPM\\SKNHPM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SKNHPM - Copy\\SKNHPM.csproj",
+        "projectUniqueName": "C:\\NewSKNHPM\\SKNHPM.csproj",
         "projectName": "SKNHPM",
-        "projectPath": "D:\\SKNHPM - Copy\\SKNHPM.csproj",
+        "projectPath": "C:\\NewSKNHPM\\SKNHPM.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\SKNHPM - Copy\\obj\\",
+        "outputPath": "C:\\NewSKNHPM\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -113,7 +113,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

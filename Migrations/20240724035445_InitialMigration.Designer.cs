@@ -12,8 +12,8 @@ using SKNHPM.Data;
 namespace SKNHPM.Migrations
 {
     [DbContext(typeof(AppicationDbContext))]
-    [Migration("20240717065213_table update")]
-    partial class tableupdate
+    [Migration("20240724035445_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -343,7 +343,7 @@ namespace SKNHPM.Migrations
                     b.Property<string>("EndPoint4")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("EndTime")
+                    b.Property<DateTime>("EndTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("JobStatusName")
@@ -373,7 +373,7 @@ namespace SKNHPM.Migrations
                     b.Property<string>("Remark")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("ReqTime")
+                    b.Property<DateTime>("ReqTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("StartPoint")
@@ -382,7 +382,7 @@ namespace SKNHPM.Migrations
                     b.Property<string>("UrgentType")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("UserId")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("JobId");

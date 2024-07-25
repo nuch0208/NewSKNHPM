@@ -19,6 +19,7 @@ namespace SKNHPM.Controllers
         }
         public IActionResult Index()
         {
+            Response.Headers.Add("Refresh","3");
             var nurserequest = context.NurseRequests.OrderByDescending(p => p.JobId).ToList();
             return View(nurserequest);
         }
@@ -40,15 +41,16 @@ namespace SKNHPM.Controllers
                 QN = nurseRequestDto.QN,
                 QNName = nurseRequestDto.QNName,
                 StartPoint = nurseRequestDto.StartPoint,
-                EndPoint1 = nurseRequestDto.EndPoint,
+                EndPoint1 = nurseRequestDto.EndPoint1,
                 MaterialType = nurseRequestDto.MaterialType,
-                UrgentType = nurseRequestDto.UrentType,
+                UrgentType = nurseRequestDto.UrgentType,
                 PatientType = nurseRequestDto.PatientType,
                 Remark = nurseRequestDto.Remark,
-                DeptName = nurseRequestDto.DeptName,
-                PoterFname = nurseRequestDto.PoterFname,
-                QNAge = nurseRequestDto.QNAge,
-                QNSex = nurseRequestDto.QNSex,
+                JobStatusName = "รอจ่ายงาน",
+                DeptName = "",
+                PoterFname = "",
+                QNAge = "",
+                QNSex = "",
             };
             context.NurseRequests.Add(nurseRequest);
             context.SaveChanges();
@@ -67,15 +69,16 @@ namespace SKNHPM.Controllers
                 QN = nurseRequest.QN,
                 QNName = nurseRequest.QNName,
                 StartPoint = nurseRequest.StartPoint,
-                EndPoint = nurseRequest.EndPoint1,
+                EndPoint1 = nurseRequest.EndPoint1,
                 MaterialType = nurseRequest.MaterialType,
-                UrentType = nurseRequest.UrgentType,
+                UrgentType = nurseRequest.UrgentType,
                 PatientType = nurseRequest.PatientType,
                 Remark = nurseRequest.Remark,
-                DeptName = "",
+                JobStatusName = "",
+                DeptName = "null",
                 PoterFname = "",
-                QNAge = "",
-                QNSex = "",
+                QNAge = "null",
+                QNSex = "null",
             };
 
              ViewData["NurseRequestId"] = nurseRequest.JobId;
@@ -99,9 +102,9 @@ namespace SKNHPM.Controllers
             nurseRequest.QN = nurseRequestDto.QN;
             nurseRequest.QNName = nurseRequestDto.QNName;
             nurseRequest.StartPoint = nurseRequestDto.StartPoint;
-            nurseRequest.EndPoint1 = nurseRequestDto.EndPoint;
+            nurseRequest.EndPoint1 = nurseRequestDto.EndPoint1;
             nurseRequest.MaterialType = nurseRequestDto.MaterialType;
-            nurseRequest.UrgentType = nurseRequestDto.UrentType;
+            nurseRequest.UrgentType = nurseRequestDto.UrgentType;
             nurseRequest.PatientType = nurseRequestDto.PatientType;
             nurseRequest.Remark = nurseRequestDto.Remark;
 
@@ -121,6 +124,56 @@ namespace SKNHPM.Controllers
 
             return RedirectToAction("Index", "NurseRequest");
         }
+
+        public IActionResult EditStatus(int id)
+        {
+            var nurseRequest = context.NurseRequests.Find(id);
+            if(nurseRequest == null)
+            {
+                return RedirectToAction("Index", "Poter");
+            }
+            var nurseRequestDto = new NurseRequestDto()
+            {
+                
+                QN = nurseRequest.QN,
+                QNName = nurseRequest.QNName,
+                StartPoint = nurseRequest.StartPoint,
+                EndPoint1 = nurseRequest.EndPoint1,
+                MaterialType = nurseRequest.MaterialType,
+                UrgentType = nurseRequest.UrgentType,
+                PatientType = nurseRequest.PatientType,
+                Remark = nurseRequest.Remark,
+                JobStatusName = "",
+                DeptName = "null",
+                PoterFname = "",
+                QNAge = "null",
+                QNSex = "null",
+            };
+
+             ViewData["NurseRequestId"] = nurseRequest.JobId;
+
+            return View(nurseRequestDto);
+        }
+
+        [HttpPost]
+        public IActionResult EditStatus(int id, NurseRequestDto nurseRequestDto)
+         {
+            var nurseRequest = context.NurseRequests.Find(id);
+            if(nurseRequest == null)
+            {
+                return RedirectToAction("Index", "Poter");
+            }
+            if (ModelState.IsValid)
+            {
+                ViewData["NurseRequestId"] = nurseRequest.JobId;
+                return View(nurseRequestDto);
+            }
+
+            nurseRequest.JobStatusName="สิ้นสุดการทำงาน";
+            context.SaveChanges();
+            
+            return RedirectToAction("Index", "Poter");
+         }
     }
 
 }

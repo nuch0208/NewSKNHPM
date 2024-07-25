@@ -253,7 +253,7 @@ namespace SKNHPM.Migrations
 
                     b.HasKey("DeptId");
 
-                    b.ToTable("Departments", (string)null);
+                    b.ToTable("Departments");
                 });
 
             modelBuilder.Entity("SKNHPM.Models.JobStatus", b =>
@@ -270,7 +270,7 @@ namespace SKNHPM.Migrations
 
                     b.HasKey("JobStatusId");
 
-                    b.ToTable("JobStatuses", (string)null);
+                    b.ToTable("JobStatuses");
                 });
 
             modelBuilder.Entity("SKNHPM.Models.Material", b =>
@@ -297,7 +297,7 @@ namespace SKNHPM.Migrations
 
                     b.HasKey("MaterialId");
 
-                    b.ToTable("Materials", (string)null);
+                    b.ToTable("Materials");
                 });
 
             modelBuilder.Entity("SKNHPM.Models.MaterialStatus", b =>
@@ -314,7 +314,7 @@ namespace SKNHPM.Migrations
 
                     b.HasKey("MatStatusId");
 
-                    b.ToTable("MaterialStatuses", (string)null);
+                    b.ToTable("MaterialStatuses");
                 });
 
             modelBuilder.Entity("SKNHPM.Models.NurseRequest", b =>
@@ -340,7 +340,7 @@ namespace SKNHPM.Migrations
                     b.Property<string>("EndPoint4")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("EndTime")
+                    b.Property<DateTime>("EndTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("JobStatusName")
@@ -370,7 +370,7 @@ namespace SKNHPM.Migrations
                     b.Property<string>("Remark")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("ReqTime")
+                    b.Property<DateTime>("ReqTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("StartPoint")
@@ -379,12 +379,12 @@ namespace SKNHPM.Migrations
                     b.Property<string>("UrgentType")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("UserId")
+                    b.Property<int>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("JobId");
 
-                    b.ToTable("NurseRequests", (string)null);
+                    b.ToTable("NurseRequests");
                 });
 
             modelBuilder.Entity("SKNHPM.Models.Patient", b =>
@@ -401,7 +401,7 @@ namespace SKNHPM.Migrations
 
                     b.HasKey("PatienId");
 
-                    b.ToTable("Patients", (string)null);
+                    b.ToTable("Patients");
                 });
 
             modelBuilder.Entity("SKNHPM.Models.Poter", b =>
@@ -426,7 +426,7 @@ namespace SKNHPM.Migrations
 
                     b.HasKey("PoterId");
 
-                    b.ToTable("Poters", (string)null);
+                    b.ToTable("Poters");
                 });
 
             modelBuilder.Entity("SKNHPM.Models.Urgent", b =>
@@ -443,7 +443,7 @@ namespace SKNHPM.Migrations
 
                     b.HasKey("UrgentId");
 
-                    b.ToTable("Urgents", (string)null);
+                    b.ToTable("Urgents");
                 });
 
             modelBuilder.Entity("SKNHPM.Models.UserLogin", b =>
@@ -503,7 +503,7 @@ namespace SKNHPM.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("UserLogins", (string)null);
+                    b.ToTable("UserLogins");
                 });
 
             modelBuilder.Entity("SKNHPM.Models.UserRole", b =>
@@ -520,7 +520,7 @@ namespace SKNHPM.Migrations
 
                     b.HasKey("RoldId");
 
-                    b.ToTable("UserRoles", (string)null);
+                    b.ToTable("UserRoles");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

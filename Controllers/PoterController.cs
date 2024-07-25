@@ -14,6 +14,7 @@ namespace SKNHPM.Controllers
 
         public IActionResult Index()
         {
+            Response.Headers.Add("Refresh","3");
             var nurserequest = context.NurseRequests.OrderByDescending(p => p.JobId).ToList();
             return View(nurserequest);
         }
@@ -37,11 +38,12 @@ namespace SKNHPM.Controllers
                 QN = nurseRequestDto.QN,
                 QNName = nurseRequestDto.QNName,
                 StartPoint = nurseRequestDto.StartPoint,
-                EndPoint1 = nurseRequestDto.EndPoint,
+                EndPoint1 = nurseRequestDto.EndPoint1,
                 MaterialType = nurseRequestDto.MaterialType,
-                UrgentType = nurseRequestDto.UrentType,
+                UrgentType = nurseRequestDto.UrgentType,
                 PatientType = nurseRequestDto.PatientType,
                 Remark = nurseRequestDto.Remark,
+                JobStatusName = "null",
                 DeptName = "null",
                 PoterFname = "null",
                 QNAge = "null",
@@ -61,13 +63,13 @@ namespace SKNHPM.Controllers
             }
             var nurseRequestDto = new NurseRequestDto()
             {
-                JobId = nurseRequest.JobId,
+                
                 QN = nurseRequest.QN,
                 QNName = nurseRequest.QNName,
                 StartPoint = nurseRequest.StartPoint,
-                EndPoint = nurseRequest.EndPoint1,
+                EndPoint1 = nurseRequest.EndPoint1,
                 MaterialType = nurseRequest.MaterialType,
-                UrentType = nurseRequest.UrgentType,
+                UrgentType = nurseRequest.UrgentType,
                 PatientType = nurseRequest.PatientType,
                 Remark = nurseRequest.Remark,
                 DeptName = "null",
@@ -132,16 +134,16 @@ namespace SKNHPM.Controllers
             }
             var nurseRequestDto = new NurseRequestDto()
             {
-                JobId = nurseRequest.JobId,
+                
                 QN = nurseRequest.QN,
                 QNName = nurseRequest.QNName,
                 StartPoint = nurseRequest.StartPoint,
-                EndPoint = nurseRequest.EndPoint1,
+                EndPoint1 = nurseRequest.EndPoint1,
                 MaterialType = nurseRequest.MaterialType,
-                UrentType = nurseRequest.UrgentType,
+                UrgentType = nurseRequest.UrgentType,
                 PatientType = nurseRequest.PatientType,
                 Remark = nurseRequest.Remark,
-                JobStatusName = nurseRequest.JobStatusName,
+                JobStatusName = "null",
                 DeptName = "null",
                 PoterFname = "null",
                 QNAge = "null",
