@@ -130,7 +130,7 @@ namespace SKNHPM.Controllers
             var nurseRequest = context.NurseRequests.Find(id);
             if(nurseRequest == null)
             {
-                return RedirectToAction("Index", "Poter");
+                return RedirectToAction("Index", "NurseRequest");
             }
             var nurseRequestDto = new NurseRequestDto()
             {
@@ -161,7 +161,7 @@ namespace SKNHPM.Controllers
             var nurseRequest = context.NurseRequests.Find(id);
             if(nurseRequest == null)
             {
-                return RedirectToAction("Index", "Poter");
+                return RedirectToAction("Index", "NurseRequest");
             }
             if (ModelState.IsValid)
             {
@@ -172,7 +172,7 @@ namespace SKNHPM.Controllers
             nurseRequest.JobStatusName="สิ้นสุดการทำงาน";
             context.SaveChanges();
             
-            return RedirectToAction("Index", "Poter");
+            return RedirectToAction("Index", "NurseRequest");
          }
 
          [HttpPost]
@@ -181,7 +181,7 @@ namespace SKNHPM.Controllers
             var nurseRequest = context.NurseRequests.Find(id);
             if(nurseRequest == null)
             {
-                return RedirectToAction("Index", "Poter");
+                return RedirectToAction("Index", "NurseRequest");
             }
             if (ModelState.IsValid)
             {
@@ -192,7 +192,7 @@ namespace SKNHPM.Controllers
             nurseRequest.JobStatusName="ยกเลิกบริการ";
             context.SaveChanges();
             
-            return RedirectToAction("Index", "Poter");
+            return RedirectToAction("Index", "NurseRequest");
          }
     }
 
