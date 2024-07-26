@@ -23,6 +23,8 @@
         @foreach (var nurserequest in Model) 
         {
             @if(nurserequest.JobStatusName != "สิ้นสุดการทำงาน")
+            {
+            @if(nurserequest.JobStatusName != "ยกเลิกบริการ")
             {  
                 @if(nurserequest.UrgentType == "ปกติ")
                 {
@@ -38,16 +40,20 @@
                     <td>@nurserequest.Remark</td>
                     <td> </td>
                     <td style="white-space:nowrap">
-                        <a class="btn btn-danger btn-sm" asp-controllers="NurseRequest" asp-action="Delete" asp-route-id="@nurserequest.JobId" onclick="return confirm('Are you sure?')">Delete</a>
-                        <a class="btn btn-primary btn-sm" asp-controllers="NurseRequest" asp-action="Edit" asp-route-id="@nurserequest.JobId">Edit</a>
-                        <input type="submit" class="btn btn-danger btn-sm" asp-controllers="NurseRequest" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" value="Finish"  />
+                        @* <a class="btn btn-danger btn-sm" asp-controllers="NurseRequest" asp-action="Delete" asp-route-id="@nurserequest.JobId" onclick="return confirm('Are you sure?')">Delete</a> *@
+                        <a class="btn btn-warning btn-sm" asp-controllers="NurseRequest" asp-action="Edit" asp-route-id="@nurserequest.JobId">Edit</a>
+                        <input type="submit" class="btn btn-primary btn-sm" asp-controllers="NurseRequest" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" value="Finish" onclick="return confirm('Job Finish?')" />
+                        <input type="submit" class="btn btn-danger btn-sm" asp-controllers="NurseRequest" asp-action="Cancel" asp-route-id="@nurserequest.JobId" value="Cancel"  onclick="return confirm('Are you sure to Cancel?')"/>
                     </td>
                 </tr>
+                }
                 }
             }    
 
             @if(nurserequest.JobStatusName != "สิ้นสุดการทำงาน")
-            {  
+            {
+            @if(nurserequest.JobStatusName != "ยกเลิกบริการ")
+            {
                 @if(nurserequest.UrgentType == "ด่วน")
                 {
                     <tr class="label-warning" style="background-color:rgb(247, 247, 100);" style="color:white;">
@@ -62,16 +68,19 @@
                     <td>@nurserequest.Remark</td>
                     <td> </td>
                     <td style="white-space:nowrap">
-                        <a class="btn btn-danger btn-sm" asp-controllers="NurseRequest" asp-action="Delete" asp-route-id="@nurserequest.JobId" onclick="return confirm('Are you sure?')">Delete</a>
-                        <a class="btn btn-primary btn-sm" asp-controllers="NurseRequest" asp-action="Edit" asp-route-id="@nurserequest.JobId">Edit</a>
-                        <input type="submit" class="btn btn-danger btn-sm" asp-controllers="NurseRequest" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" value="Finish"  />
+                        <a class="btn btn-warning btn-sm" asp-controllers="NurseRequest" asp-action="Edit" asp-route-id="@nurserequest.JobId">Edit</a>
+                        <input type="submit" class="btn btn-primary btn-sm" asp-controllers="NurseRequest" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" value="Finish" onclick="return confirm('Job Finish?')" />
+                        <input type="submit" class="btn btn-danger btn-sm" asp-controllers="NurseRequest" asp-action="Cancel" asp-route-id="@nurserequest.JobId" value="Cancel" onclick="return confirm('Are you sure to Cancel?')" />
                     </td>
                 </tr>
+                }
                 }
             } 
 
             @if(nurserequest.JobStatusName != "สิ้นสุดการทำงาน")
             {  
+            @if(nurserequest.JobStatusName != "ยกเลิกบริการ")
+            {    
                 @if(nurserequest.UrgentType == "ด่วนมาก")
                 {
                     <tr class="label-warning" style="background-color:rgb(240, 114, 114);" style="color:white;">
@@ -86,11 +95,13 @@
                     <td>@nurserequest.Remark</td>
                     <td> </td>
                     <td style="white-space:nowrap">
-                        <a class="btn btn-danger btn-sm" asp-controllers="NurseRequest" asp-action="Delete" asp-route-id="@nurserequest.JobId" onclick="return confirm('Are you sure?')">Delete</a>
-                        <a class="btn btn-primary btn-sm" asp-controllers="NurseRequest" asp-action="Edit" asp-route-id="@nurserequest.JobId">Edit</a>
-                        <input type="submit" class="btn btn-danger btn-sm" asp-controllers="NurseRequest" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" value="Finish"  />
+                        <a class="btn btn-warning btn-sm" asp-controllers="NurseRequest" asp-action="Edit" asp-route-id="@nurserequest.JobId">Edit</a>
+                        <input type="submit" class="btn btn-primary btn-sm" asp-controllers="NurseRequest" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" value="Finish" onclick="return confirm('Job Finish?')" />
+                        <input type="submit" class="btn btn-danger btn-sm" asp-controllers="NurseRequest" asp-action="Cancel" asp-route-id="@nurserequest.JobId" value="Cancel" onclick="return confirm('Are you sure to Cancel?')" />
+
                     </td>
                 </tr>
+                }
                 }
             }       
         }

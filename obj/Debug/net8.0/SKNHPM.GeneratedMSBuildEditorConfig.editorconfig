@@ -17,83 +17,83 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = SKNHPM
 build_property.RootNamespace = SKNHPM
-build_property.ProjectDir = c:\NewSKNHPM\
+build_property.ProjectDir = D:\NewSKNHPM\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = c:\NewSKNHPM
+build_property.MSBuildProjectDirectory = D:\NewSKNHPM
 build_property._RazorSourceGeneratorDebug = 
 
-[c:/NewSKNHPM/Views/Account/Login.cshtml]
+[D:/NewSKNHPM/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/NewSKNHPM/Views/Account/Register.cshtml]
+[D:/NewSKNHPM/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/NewSKNHPM/Views/Dashboard/Index.cshtml]
+[D:/NewSKNHPM/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/NewSKNHPM/Views/Home/Index.cshtml]
+[D:/NewSKNHPM/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/NewSKNHPM/Views/Home/Privacy.cshtml]
+[D:/NewSKNHPM/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/NewSKNHPM/Views/NurseRequest/Create.cshtml]
+[D:/NewSKNHPM/Views/NurseRequest/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTnVyc2VSZXF1ZXN0XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/NewSKNHPM/Views/NurseRequest/Edit.cshtml]
+[D:/NewSKNHPM/Views/NurseRequest/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTnVyc2VSZXF1ZXN0XEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/NewSKNHPM/Views/NurseRequest/Index.cshtml]
+[D:/NewSKNHPM/Views/NurseRequest/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTnVyc2VSZXF1ZXN0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/NewSKNHPM/Views/Poter/Create.cshtml]
+[D:/NewSKNHPM/Views/Poter/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG90ZXJcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/NewSKNHPM/Views/Poter/Edit.cshtml]
+[D:/NewSKNHPM/Views/Poter/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG90ZXJcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/NewSKNHPM/Views/Poter/EditStat.cshtml]
+[D:/NewSKNHPM/Views/Poter/EditStat.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG90ZXJcRWRpdFN0YXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/NewSKNHPM/Views/Poter/Index.cshtml]
+[D:/NewSKNHPM/Views/Poter/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG90ZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/NewSKNHPM/Views/Shared/Error.cshtml]
+[D:/NewSKNHPM/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/NewSKNHPM/Views/Shared/_LoginPartial.cshtml]
+[D:/NewSKNHPM/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/NewSKNHPM/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/NewSKNHPM/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/NewSKNHPM/Views/_ViewImports.cshtml]
+[D:/NewSKNHPM/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/NewSKNHPM/Views/_ViewStart.cshtml]
+[D:/NewSKNHPM/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/NewSKNHPM/Views/Shared/_Layout.cshtml]
+[D:/NewSKNHPM/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-hrmu7h8ydd

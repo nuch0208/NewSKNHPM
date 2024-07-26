@@ -174,6 +174,26 @@ namespace SKNHPM.Controllers
             
             return RedirectToAction("Index", "Poter");
          }
+
+         [HttpPost]
+        public IActionResult Cancel(int id, NurseRequestDto nurseRequestDto)
+         {
+            var nurseRequest = context.NurseRequests.Find(id);
+            if(nurseRequest == null)
+            {
+                return RedirectToAction("Index", "Poter");
+            }
+            if (ModelState.IsValid)
+            {
+                ViewData["NurseRequestId"] = nurseRequest.JobId;
+                return View(nurseRequestDto);
+            }
+
+            nurseRequest.JobStatusName="ยกเลิกบริการ";
+            context.SaveChanges();
+            
+            return RedirectToAction("Index", "Poter");
+         }
     }
 
 }

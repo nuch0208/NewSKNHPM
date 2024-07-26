@@ -23,6 +23,8 @@
         {  
             @if(nurserequest.JobStatusName != "สิ้นสุดการทำงาน")
             {  
+            @if(nurserequest.JobStatusName != "ยกเลิกบริการ")
+            {
             @if(nurserequest.UrgentType == "ปกติ")
             {
             <tr class="label-warning" style="background-color:rgb(131, 247, 131);" style="color:white;">
@@ -38,15 +40,18 @@
                 <td> </td>
                 <td style="white-space:nowrap">
                     <a class="btn btn-warning btn-sm" asp-controllers="Poter" asp-action="Edit" asp-route-id="@nurserequest.JobId">Assign</a>
-                    <a class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="Delete" asp-route-id="@nurserequest.JobId" onclick="return confirm('Are you sure?')">Close</a>
-                    <input type="submit" class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" value="Finish"  />
+                    <input type="submit" class="btn btn-primary btn-sm" asp-controllers="Poter" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" value="Finish" onclick="return confirm('Job Finish?')" />
+                    <input type="submit" class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="Cancel" asp-route-id="@nurserequest.JobId" value="Cancel" onclick="return confirm('Are you sure to Cancel?')" />
                 </td>
             </tr>
             }
-
             }
+            }
+
             @if(nurserequest.JobStatusName != "สิ้นสุดการทำงาน")
             {  
+             @if(nurserequest.JobStatusName != "ยกเลิกบริการ")
+            {
             @if(nurserequest.UrgentType == "ด่วน")
             {
             <tr class="label-warning" style="background-color:rgb(247, 247, 100);" style="color:white;">
@@ -62,15 +67,18 @@
                 <td> </td>
                 <td style="white-space:nowrap">
                     <a class="btn btn-warning btn-sm" asp-controllers="Poter" asp-action="Edit" asp-route-id="@nurserequest.JobId">Assign</a>
-                    <a class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="Delete" asp-route-id="@nurserequest.JobId" onclick="return confirm('Are you sure?')">Close</a>
-                    <input type="submit" class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" value="Finish"  />
+                    <input type="submit" class="btn btn-primary btn-sm" asp-controllers="Poter" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" value="Finish" onclick="return confirm('Job Finish?')"  />
+                    <input type="submit" class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="Cancel" asp-route-id="@nurserequest.JobId" value="Cancel" onclick="return confirm('Are you sure to Cancel?')" />
                 </td>
             </tr>
             }
-
             }
+            }
+
             @if(nurserequest.JobStatusName != "สิ้นสุดการทำงาน")
             {  
+            @if(nurserequest.JobStatusName != "ยกเลิกบริการ")
+            {
             @if(nurserequest.UrgentType == "ด่วนมาก")
             {
             <tr class="label-warning" style="background-color:rgb(240, 114, 114);" style="color:white;">
@@ -86,12 +94,13 @@
                 <td> </td>
                 <td style="white-space:nowrap">
                     <a class="btn btn-warning btn-sm" asp-controllers="Poter" asp-action="Edit" asp-route-id="@nurserequest.JobId">Assign</a>
-                    <a class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="Delete" asp-route-id="@nurserequest.JobId" onclick="return confirm('Are you sure?')">Close</a>
-                    <input type="submit" class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" value="Finish"  />
+                    <input type="submit" class="btn btn-primary btn-sm" asp-controllers="Poter" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" value="Finish" onclick="return confirm('Job Finish?')"  />
+                    <input type="submit" class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="Cancel" asp-route-id="@nurserequest.JobId" value="Cancel" onclick="return confirm('Are you sure to Cancel?')" />
                 </td>   
             </tr>
             }
-        }
+            }
+            }
         }
     </tbody>
 </table>
