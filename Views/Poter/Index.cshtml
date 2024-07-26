@@ -20,85 +20,40 @@
 
     <tbody>
         @foreach (var nurserequest in Model)
-        {  
-            @if(nurserequest.JobStatusName != "สิ้นสุดการทำงาน")
-            {  
-            @if(nurserequest.JobStatusName != "ยกเลิกบริการ")
+        {
+           @if(nurserequest.UrgentType == "ปกติ")
             {
-            @if(nurserequest.UrgentType == "ปกติ")
+                ViewBag.Title = "background-color:rgb(131, 247, 131);";
+            }
+         @if(nurserequest.UrgentType == "ด่วน")
             {
-            <tr class="label-warning" style="background-color:rgb(131, 247, 131);" style="color:white;">
-                <td>@nurserequest.QN</td>
-                <td>@nurserequest.QNName</td>
-                <td>@nurserequest.StartPoint</td>
-                <td>@nurserequest.EndPoint1</td>
-                <td>@nurserequest.PoterFname</td>
-                <td>@nurserequest.MaterialType</td>
-                <td>@nurserequest.UrgentType</td>
-                <td>@nurserequest.JobStatusName</td>
-                <td>@nurserequest.Remark</td>
-                <td> </td>
+                ViewBag.Title = "background-color:rgb(247, 247, 100);";
+            }
+         @if(nurserequest.UrgentType == "ด่วนมาก")
+            {
+                ViewBag.Title = "background-color:rgb(240, 114, 114);";
+            }
+        @if(nurserequest.JobStatusName != "สิ้นสุดการทำงาน")
+            {
+        @if(nurserequest.JobStatusName != "ยกเลิกบริการ")
+            {
+            <tr class="label-warning" style="color:black; @ViewBag.Title">
+                    <td>@nurserequest.QN</td>
+                    <td>@nurserequest.QNName</td>
+                    <td>@nurserequest.StartPoint</td>
+                    <td>@nurserequest.EndPoint1</td>
+                    <td>@nurserequest.PoterFname</td>
+                    <td>@nurserequest.MaterialType</td>
+                    <td>@nurserequest.UrgentType</td>
+                    <td>@nurserequest.JobStatusName</td>
+                    <td>@nurserequest.Remark</td>
+                    <td> </td>
                 <td style="white-space:nowrap">
                     <a class="btn btn-warning btn-sm" asp-controllers="Poter" asp-action="Edit" asp-route-id="@nurserequest.JobId">Assign</a>
                     <input type="submit" class="btn btn-primary btn-sm" asp-controllers="Poter" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" value="Finish" onclick="return confirm('Job Finish?')" />
                     <input type="submit" class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="Cancel" asp-route-id="@nurserequest.JobId" value="Cancel" onclick="return confirm('Are you sure to Cancel?')" />
                 </td>
             </tr>
-            }
-            }
-            }
-
-            @if(nurserequest.JobStatusName != "สิ้นสุดการทำงาน")
-            {  
-             @if(nurserequest.JobStatusName != "ยกเลิกบริการ")
-            {
-            @if(nurserequest.UrgentType == "ด่วน")
-            {
-            <tr class="label-warning" style="background-color:rgb(247, 247, 100);" style="color:white;">
-                <td>@nurserequest.QN</td>
-                <td>@nurserequest.QNName</td>
-                <td>@nurserequest.StartPoint</td>
-                <td>@nurserequest.EndPoint1</td>
-                <td>@nurserequest.PoterFname</td>
-                <td>@nurserequest.MaterialType</td>
-                <td>@nurserequest.UrgentType</td>
-                <td>@nurserequest.JobStatusName</td>
-                <td>@nurserequest.Remark</td>
-                <td> </td>
-                <td style="white-space:nowrap">
-                    <a class="btn btn-warning btn-sm" asp-controllers="Poter" asp-action="Edit" asp-route-id="@nurserequest.JobId">Assign</a>
-                    <input type="submit" class="btn btn-primary btn-sm" asp-controllers="Poter" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" value="Finish" onclick="return confirm('Job Finish?')"  />
-                    <input type="submit" class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="Cancel" asp-route-id="@nurserequest.JobId" value="Cancel" onclick="return confirm('Are you sure to Cancel?')" />
-                </td>
-            </tr>
-            }
-            }
-            }
-
-            @if(nurserequest.JobStatusName != "สิ้นสุดการทำงาน")
-            {  
-            @if(nurserequest.JobStatusName != "ยกเลิกบริการ")
-            {
-            @if(nurserequest.UrgentType == "ด่วนมาก")
-            {
-            <tr class="label-warning" style="background-color:rgb(240, 114, 114);" style="color:white;">
-                <td>@nurserequest.QN</td>
-                <td>@nurserequest.QNName</td>
-                <td>@nurserequest.StartPoint</td>
-                <td>@nurserequest.EndPoint1</td>
-                <td>@nurserequest.PoterFname</td>
-                <td>@nurserequest.MaterialType</td>
-                <td>@nurserequest.UrgentType</td>
-                <td>@nurserequest.JobStatusName</td>
-                <td>@nurserequest.Remark</td>
-                <td> </td>
-                <td style="white-space:nowrap">
-                    <a class="btn btn-warning btn-sm" asp-controllers="Poter" asp-action="Edit" asp-route-id="@nurserequest.JobId">Assign</a>
-                    <input type="submit" class="btn btn-primary btn-sm" asp-controllers="Poter" asp-action="EditStatus" asp-route-id="@nurserequest.JobId" value="Finish" onclick="return confirm('Job Finish?')"  />
-                    <input type="submit" class="btn btn-danger btn-sm" asp-controllers="Poter" asp-action="Cancel" asp-route-id="@nurserequest.JobId" value="Cancel" onclick="return confirm('Are you sure to Cancel?')" />
-                </td>   
-            </tr>
-            }
             }
             }
         }
