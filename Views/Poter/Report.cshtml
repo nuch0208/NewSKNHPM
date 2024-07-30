@@ -1,0 +1,58 @@
+@model List<NurseRequest>
+@{
+}
+
+<form method="post" enctype="multipart/form-data">
+<table class="table">
+    <thead>
+        <tr>
+            <th>เวลาร้องขอ</th>
+            <th>QN</th>
+            <th>ชื่อ-นามสกุล</th>
+            <th>ต้นทาง</th>
+            <th>ปลายทาง</th>
+            <th>พนักงานเวรเปล</th>
+            <th>ประเภทรถ</th>
+            <th>ความเร่งด่วน</th>
+            <th>สถานะ</th>
+            <th>หมายเหตุ</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var nurserequest in Model)
+        {
+           @if(nurserequest.UrgentType == "ปกติ")
+            {
+                ViewBag.Title = "background-color:rgb(131, 247, 131);";
+            }
+         @if(nurserequest.UrgentType == "ด่วน")
+            {
+                ViewBag.Title = "background-color:rgb(247, 247, 100);";
+            }
+         @if(nurserequest.UrgentType == "ด่วนมาก")
+            {
+                ViewBag.Title = "background-color:rgb(240, 114, 114);";
+            }
+            <tr class="label-warning" style="color:black; @ViewBag.Title">
+                    <td>@nurserequest.CreateDate</td>
+                    <td>@nurserequest.QN</td>
+                    <td>@nurserequest.QNName</td>
+                    <td>@nurserequest.StartPoint</td>
+                    <td>@nurserequest.EndPoint1</td>
+                    <td>@nurserequest.PoterFname</td>
+                    <td>@nurserequest.MaterialType</td>
+                    <td>@nurserequest.UrgentType</td>
+                    <td>@nurserequest.JobStatusName</td>
+                    <td>@nurserequest.Remark</td>
+                    <td> </td>
+            </tr>
+          
+        }
+            
+    </tbody>
+</table>
+</form>
+<form>
+        <a class="btn btn-primary" asp-controllers="Poter" asp-action="ExportProductInExcel">Download excel</a>
+</form>

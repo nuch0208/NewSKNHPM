@@ -1,6 +1,9 @@
+using System.Data;
+using ClosedXML.Excel;
 using Microsoft.AspNetCore.Mvc;
 using SKNHPM.Data;
 using SKNHPM.Models;
+
 
 namespace SKNHPM.Controllers
 {
@@ -15,6 +18,12 @@ namespace SKNHPM.Controllers
         public IActionResult Index()
         {
             Response.Headers.Add("Refresh","3");
+            var nurserequest = context.NurseRequests.OrderByDescending(p => p.JobId).ToList();
+            return View(nurserequest);
+        }
+
+        public IActionResult Report()
+        {
             var nurserequest = context.NurseRequests.OrderByDescending(p => p.JobId).ToList();
             return View(nurserequest);
         }
@@ -194,5 +203,50 @@ namespace SKNHPM.Controllers
             
             return RedirectToAction("Index", "Poter");
          }
+
+         [HttpGet]
+        public async Task<FileResult> ExportProductInExcel()
+        {
+            var nurseRequest = context.NurseRequests.ToList();
+            var fileName = "Daily Report.xlsx";
+            return GenerateExcel(fileName, nurseRequest);
+        }
+
+        private FileResult GenerateExcel(string fileName, IEnumerable<NurseRequest> nurseRequest)
+        {
+            DataTable dataTable = new DataTable("Daily Report");
+            dataTable.Columns.AddRange(new DataColumn[]
+            {
+                new DataColumn("JobId"),
+                new DataColumn("Create Date"),
+                new DataColumn("Qn"),
+                new DataColumn("Start Point"),
+                new DataColumn("End Point"),
+                new DataColumn("MaterialType"),
+                new DataColumn("PoterFname"),
+                new DataColumn("JobStatusName"),
+                new DataColumn("Remark"),
+                
+            });
+
+            foreach (var i in nurseRequest)
+            {
+                dataTable.Rows.Add(i.JobId, i.CreateDate, i.QN, i.StartPoint , i.EndPoint1, i.MaterialType, i.PoterFname ,i.JobStatusName, i.Remark);
+            }
+
+            using (XLWorkbook wb = new XLWorkbook())
+            {
+                wb.Worksheets.Add(dataTable);
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    wb.SaveAs(stream);
+
+                    return File(stream.ToArray(),
+                        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                        fileName);
+                }
+            }
+        }
+
     }
 }

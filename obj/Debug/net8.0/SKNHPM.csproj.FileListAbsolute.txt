@@ -1641,3 +1641,10 @@ D:\NewSKNHPM\obj\Debug\net8.0\refint\SKNHPM.dll
 D:\NewSKNHPM\obj\Debug\net8.0\SKNHPM.pdb
 D:\NewSKNHPM\obj\Debug\net8.0\SKNHPM.genruntimeconfig.cache
 D:\NewSKNHPM\obj\Debug\net8.0\ref\SKNHPM.dll
+D:\NewSKNHPM\bin\Debug\net8.0\ClosedXML.dll
+D:\NewSKNHPM\bin\Debug\net8.0\ClosedXML.Parser.dll
+D:\NewSKNHPM\bin\Debug\net8.0\DocumentFormat.OpenXml.dll
+D:\NewSKNHPM\bin\Debug\net8.0\ExcelNumberFormat.dll
+D:\NewSKNHPM\bin\Debug\net8.0\RBush.dll
+D:\NewSKNHPM\bin\Debug\net8.0\SixLabors.Fonts.dll
+D:\NewSKNHPM\bin\Debug\net8.0\System.IO.Packaging.dll

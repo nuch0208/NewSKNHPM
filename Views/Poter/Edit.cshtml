@@ -18,7 +18,7 @@
             <div class="row mb-3">
                 <label class="col-sm-4 col-form-label">QN</label>
                 <div class=col-sm-8>
-                    <input class="form-control" asp-for="QN">
+                    <input class="form-control" asp-for="QN" readonly>
                     <span asp-validation-for="QN" class="text-danger"></span>
                 </div>
             </div>
@@ -86,7 +86,7 @@
                         <option value="ร้องขอ">ร้องขอ</option>
                         <option value="มอบหมาย">มอบหมาย</option>
                         <option value="อยู่ระหว่างเดินทาง">อยู่ระหว่างเดินทาง</option>
-                        <option value="สิ้นสุดการบริการ">สิ้นสุดการบริการ</option>
+                        <option value="สิ้นสุดการบริการ">สิ้นสุดการทำงาน</option>
                     </select>
                 </div>
             </div>    
@@ -94,10 +94,10 @@
             <div class="row mb-3" >
                 <label class="col-sm-4 col-form-label">หมายเหตุ</label>
                 <div class=col-sm-8>
-                    <input class="form-control" asp-for="Remark" >
+                    <input class="form-control" asp-for="Remark" readonly >
                     <span asp-validation-for="Remark" class="text-danger"></span>
                 </div>
-
+            </div>
             <div class="row">
                 <div class="offset-sm-4 col-sm-4 d-grid">
                     <button type="submit" class="btn btn-primary">Submit</button>

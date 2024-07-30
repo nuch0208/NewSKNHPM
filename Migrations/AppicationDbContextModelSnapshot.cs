@@ -325,6 +325,9 @@ namespace SKNHPM.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("JobId"));
 
+                    b.Property<DateTime?>("CreateDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("DeptName")
                         .HasColumnType("nvarchar(max)");
 

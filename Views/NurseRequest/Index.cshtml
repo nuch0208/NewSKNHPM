@@ -6,6 +6,7 @@
 <table class="table">
     <thead>
         <tr>
+            <th>เวลาร้องขอ</th>
             <th>QN</th>
             <th>ชื่อ-นามสกุล</th>
             <th>ต้นทาง</th>
@@ -40,6 +41,7 @@
         @if(nurserequest.JobStatusName != "ยกเลิกบริการ")
             {
             <tr class="label-warning" style="color:black; @ViewBag.Title">
+                    <td>@nurserequest.CreateDate</td>
                     <td>@nurserequest.QN</td>
                     <td>@nurserequest.QNName</td>
                     <td>@nurserequest.StartPoint</td>

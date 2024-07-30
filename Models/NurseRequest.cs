@@ -9,7 +9,8 @@ public class NurseRequest
     [Key]
     public int  JobId   { get; set; } 
     public DateTime ReqTime { get; set; }
-    public DateTime EndTime { get; set; }   
+    public DateTime EndTime { get; set; }  
+    public DateTime? CreateDate { get; set;} = DateTime.UtcNow; 
    
     public int UserId { get; set; }
    
