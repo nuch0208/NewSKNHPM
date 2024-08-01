@@ -1,7 +1,10 @@
 @model List<NurseRequest>
 @{
 }
-
+<h4>ดึงรายงาน</h4>
+<form>
+        <a class="btn btn-primary" asp-controllers="Poter" asp-action="ExportProductInExcel">Download excel</a>
+</form>
 <form method="post" enctype="multipart/form-data">
 <table class="table">
     <thead>
@@ -52,7 +55,4 @@
             
     </tbody>
 </table>
-</form>
-<form>
-        <a class="btn btn-primary" asp-controllers="Poter" asp-action="ExportProductInExcel">Download excel</a>
 </form>

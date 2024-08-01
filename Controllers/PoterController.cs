@@ -15,10 +15,14 @@ namespace SKNHPM.Controllers
             this.context = context;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string searchString)
         {
-            Response.Headers.Add("Refresh","3");
+            Response.Headers.Add("Refresh","15");
             var nurserequest = context.NurseRequests.OrderByDescending(p => p.JobId).ToList();
+             if(!String.IsNullOrEmpty(searchString))
+            {
+                nurserequest = nurserequest.Where(n => n.JobStatusName.Contains(searchString)).ToList();
+            }
             return View(nurserequest);
         }
 

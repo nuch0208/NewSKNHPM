@@ -17,10 +17,14 @@ namespace SKNHPM.Controllers
         {
             this.context = context;
         }
-        public IActionResult Index()
+        public IActionResult Index(string searchString)
         {
-            Response.Headers.Add("Refresh","3");
+            Response.Headers.Add("Refresh","15");
             var nurserequest = context.NurseRequests.OrderByDescending(p => p.JobId).ToList();
+            if(!String.IsNullOrEmpty(searchString))
+            {
+                nurserequest = nurserequest.Where(n => n.StartPoint.ToLower().Contains(searchString)).ToList();
+            }
             return View(nurserequest);
         }
          public IActionResult Create()

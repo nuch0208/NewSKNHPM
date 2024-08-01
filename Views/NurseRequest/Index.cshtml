@@ -2,6 +2,18 @@
 @{
 }
 
+<h4>รายการขอใช้บริการ</h4>
+
+    <div class="col-md-4">
+        <form class="d-flex" asp-action="Index" asp-asp-controller="NurseRequest">
+            <input name="searchString" class="form-control me-1" type="search" placeholder="ค้นหาแผนกต้นทาง" aria-label="Search">
+            <button class="btn btn-dark" type="submit">Search</button>
+        </form>
+    </div>
+    <div>
+        <a asp-action="Index" class="text-dark">Back to Full List</a>
+    </div>
+
 <form method="post" enctype="multipart/form-data">
 <table class="table">
     <thead>
