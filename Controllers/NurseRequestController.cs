@@ -25,7 +25,9 @@ namespace SKNHPM.Controllers
             {
                 nurserequest = nurserequest.Where(n => n.StartPoint.ToLower().Contains(searchString)).ToList();
             }
+            
             return View(nurserequest);
+
         }
          public IActionResult Create()
          {

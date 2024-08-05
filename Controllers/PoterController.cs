@@ -25,12 +25,6 @@ namespace SKNHPM.Controllers
             }
             return View(nurserequest);
         }
-
-        public IActionResult Report()
-        {
-            var nurserequest = context.NurseRequests.OrderByDescending(p => p.JobId).ToList();
-            return View(nurserequest);
-        }
         
         public IActionResult Create()
          {
@@ -250,6 +244,21 @@ namespace SKNHPM.Controllers
                         fileName);
                 }
             }
+        }
+
+        public IActionResult Report(int pg=1)
+        {
+            var nurserequest = context.NurseRequests.OrderByDescending(p => p.JobId).ToList();
+            const int pageSize = 12;
+            if (pg < 1)
+                pg = 1;
+            var recsCount = nurserequest.Count();
+            var pager = new Pager(recsCount, pg, pageSize);
+            int recSkip = (pg - 1) * pageSize;
+            var data = nurserequest.Skip(recSkip).Take(pager.PageSize).ToList();
+            this.ViewBag.Pager = pager;
+            //return View(nurserequest);
+            return View(data);
         }
 
     }
