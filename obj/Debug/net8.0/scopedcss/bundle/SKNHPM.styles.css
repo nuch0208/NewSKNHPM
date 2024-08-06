@@ -48,9 +48,10 @@ button.accept-policy[b-hrmu7h8ydd] {
   line-height: 60px;
 }
 .backgroundBg[b-hrmu7h8ydd] {
-  background-image: url('Images/P5.png');
+  background-color:#d5f3ee;
+  /* background-image: url('Images/P5.png'); */
   /* background: yellow; */
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: center;
   background-attachment: fixed;
   background-size: cover;
