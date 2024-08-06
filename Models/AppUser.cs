@@ -14,5 +14,6 @@ namespace SKNHPM.Models
         [Required]
         public string? Name { get; set; }
         public string? Address { get; set; }
+        public string? Roles { get; internal set; }
     }
 }

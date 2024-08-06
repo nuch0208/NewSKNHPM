@@ -23,6 +23,6 @@ namespace SKNHPM.ViewModels
         public string? ConfirmPassword { get; set; }
 
         [DataType(DataType.MultilineText)]
-        public string? Address { get; set; }
+        public string? Roles { get; set; }
     }
 }

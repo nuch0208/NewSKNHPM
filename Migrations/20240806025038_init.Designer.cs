@@ -12,8 +12,8 @@ using SKNHPM.Data;
 namespace SKNHPM.Migrations
 {
     [DbContext(typeof(AppicationDbContext))]
-    [Migration("20240730011544_Initial")]
-    partial class Initial
+    [Migration("20240806025038_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -207,6 +207,9 @@ namespace SKNHPM.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("Roles")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("nvarchar(max)");

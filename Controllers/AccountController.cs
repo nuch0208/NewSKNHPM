@@ -50,7 +50,7 @@ public class AccountController(SignInManager<AppUser> signInManager, UserManager
                 Name = model.Name,
                 UserName = model.Email,
                 Email = model.Email,
-                Address = model.Address
+                Roles = model.Roles,
             };
 
             var result = await userManager.CreateAsync(user, model.Password!);

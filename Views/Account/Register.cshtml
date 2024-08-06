@@ -31,10 +31,15 @@
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
             <div class="mb-1">
-                <label asp-for="Address" class="control-label"></label>
-                <textarea asp-for="Address" class="form-control" rows="2"></textarea>
-                <span asp-validation-for="Address" class="text-danger"></span>
+                <label asp-for="Roles" class="control-label"></label>
+                <div class=col-sm-8>
+                    <select class="form-select" asp-for="Roles">
+                        <option value="nurse">Nurse</option>
+                        <option value="potter">Potter</option>
+                    </select>
+                </div>
             </div>
+
             <div class="row">
                 <div class="col-8">
                     <a asp-action="Login" asp-route-returnurl="@ViewData["ReturnUrl"]" class="text-decoration-none float-start mt-2">Have account?</a>
